@@ -37,13 +37,14 @@ import org.objectweb.asm.Opcodes;
 public class CopyRuneLiteClasses extends AbstractInjector
 {
 	private static final List<String> RUNELITE_OBJECTS = List.of(
-			"RuneLiteClanMember",
-			"RuneLiteIterableLinkDeque",
-			"RuneLiteIterableNodeDeque",
-			"RuneLiteIterableNodeHashTable",
-			"RuneLiteMenuEntry",
-			"RuneLiteObject",
-		        "RuneLiteRasterizer"
+		"RuneLiteClanMember",
+		"RuneLiteIterableLinkDeque",
+		"RuneLiteIterableNodeDeque",
+		"RuneLiteIterableNodeHashTable",
+		"RuneLiteMenuEntry",
+		"RuneLiteObject",
+		"RuneLiteRasterizer",
+		"RuneLiteWorldView"
 	);
 
 
@@ -63,7 +64,7 @@ public class CopyRuneLiteClasses extends AbstractInjector
 			ClassFile runeliteObjectVanilla = inject.getVanilla().findClass(className);
 
 			final ClassFile runeLiteDeob = inject.getDeobfuscated()
-					.findClass(className);
+				.findClass(className);
 
 			if (runeliteObjectVanilla == null)
 			{
